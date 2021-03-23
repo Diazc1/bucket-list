@@ -1,2 +1,2 @@
-# bucket-list
+# Bucket-list
 Sinatra Content Management System App
