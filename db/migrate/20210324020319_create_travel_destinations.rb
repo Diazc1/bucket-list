@@ -4,6 +4,7 @@ class CreateTravelDestinations < ActiveRecord::Migration[6.1]
       t.string :location
       t.string :description
       t.decimal :rating
+      t.integer :user_id
     end
   end
 end
