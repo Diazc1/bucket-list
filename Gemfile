@@ -1,16 +1,16 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem "activerecord", "~> 6.1"
+gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
-gem "shotgun", "~> 0.9.2"
-gem "thin", "~> 1.8"
+gem "shotgun"
+gem "thin"
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
-gem "sqlite3", "~> 1.4"
+gem "sqlite3"
 
 group :test do
   gem 'rspec'
@@ -18,6 +18,7 @@ group :test do
   gem 'rack-test'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
+
 
 
 
