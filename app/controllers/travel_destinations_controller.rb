@@ -2,8 +2,8 @@ class TravelDestinationsController < ApplicationController
 
     #READ all travel_destinations
     get '/travel_destinations' do
-        @travel_destinations = Travel_destination.all
-        erb :index
+        @travel_destinations = TravelDestination.all
+        erb :'/travel_destinations/index'
     end
 
 
