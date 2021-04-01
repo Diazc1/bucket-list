@@ -24,7 +24,7 @@ class TravelDestinationsController < ApplicationController
     #CREATE new travel_destination (save in db)
 
     post '/travel_destinations' do 
-        travel_destination = TravelDestination.new(location: params["location"], description: params["description"], rating: params["rating"])
+        travel_destination = TravelDestination.new(params["travel_destination"])
 
         if travel_destination.save
             redirect "/travel_destinations/#{travel_destination.id}"

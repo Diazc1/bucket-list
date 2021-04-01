@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_232612) do
+ActiveRecord::Schema.define(version: 2021_04_01_223434) do
 
   create_table "travel_destinations", force: :cascade do |t|
     t.string "location"
     t.text "description"
-    t.decimal "rating"
+    t.float "rating"
     t.integer "user_id"
   end
 
