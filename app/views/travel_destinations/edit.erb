@@ -1,7 +1,7 @@
 <h1>EDIT FORM!</h1>
 
-<form method="PUT" action="/travel_destinations/<%= @travel_destination.id %>">
-
+<form method="POST" action="/travel_destinations/<%= @travel_destination.id %>">
+    <input type="hidden" name="_method" value="patch">
     <input type="text" name="location" value="<%= @travel_destination.location%>"><br>
     <br>
     <textarea name="description" value="<%= @travel_destination.description%>"></textarea><br>

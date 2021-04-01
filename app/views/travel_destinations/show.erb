@@ -1,1 +1,8 @@
 <%= @travel_destination.location %>
+
+
+
+<form action="/travel_destinations/<%= @travel_destination.id %>" method="POST">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Bucket List">
+</form>

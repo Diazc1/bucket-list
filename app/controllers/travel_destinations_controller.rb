@@ -45,8 +45,26 @@ class TravelDestinationsController < ApplicationController
 
     #UPDATE 1 travel_destination (save in db)
 
+    patch '/travel_destinations/:id' do
+        travel_destination = TravelDestination.find_by_id(params[:id])
+        travel_destination.location = params["location"]
+
+        if travel_destination.save
+            redirect "/travel_destinations/#{travel_destination.id}"
+        else
+            redirect "/travel_destinations/#{travel_destination.id}/edit"
+        end
+    end
+
 
     #DELETE 1 travel_destination
+
+    delete '/travel_destinations/:id' do
+        travel_destination = TravelDestination.find_by_id(params[:id])
+        travel_destination.destroy
+
+        redirect "/travel_destinations"
+    end
 
 
 end
