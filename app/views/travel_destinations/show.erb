@@ -1,5 +1,8 @@
-<%= @travel_destination.location %>
-
+<%= @travel_destination.location %><br>
+<br>
+<%= @travel_destination.description %>
+<br>
+Rating &#9733&#9733&#9733&#9733&#9733 : <%= @travel_destination.rating %>
 
 
 <form action="/travel_destinations/<%= @travel_destination.id %>" method="POST">
