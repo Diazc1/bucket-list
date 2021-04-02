@@ -47,7 +47,7 @@ class TravelDestinationsController < ApplicationController
 
     patch '/travel_destinations/:id' do
         travel_destination = TravelDestination.find_by_id(params[:id])
-        travel_destination.location = params["location"]
+        
 
         if travel_destination.save
             redirect "/travel_destinations/#{travel_destination.id}"

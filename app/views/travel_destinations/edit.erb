@@ -2,11 +2,11 @@
 
 <form method="POST" action="/travel_destinations/<%= @travel_destination.id %>">
     <input type="hidden" name="_method" value="patch">
-    <input type="text" name="location" value="<%= @travel_destination.location%>"><br>
+    <input type="text" name="travel_destination[location]" value="<%= @travel_destination.location %>"><br>
     <br>
-    <textarea name="description" value="<%= @travel_destination.description%>"></textarea><br>
+    <textarea name="travel_destination[description]"><%= @travel_destination.description %></textarea><br>
     <br>
-    <input type="text" name="rating" value="<%= @travel_destination.rating%>"><br>
+    <input type="text" name="travel_destination[rating]" value="<%= @travel_destination.rating %>"><br>
     <br>
     <input type="submit" value="Update Bucket List">
 
