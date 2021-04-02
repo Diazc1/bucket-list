@@ -4,8 +4,13 @@ class UsersController < ApplicationController
 
 
     #signup route FORM
-
+    get '/signup' do
+    end
 
     #signup route POST
+    post '/signup' do
+    end
+
+    
 end
 
