@@ -25,3 +25,5 @@ end
 
 
 
+
+gem "dotenv", "~> 2.7"
