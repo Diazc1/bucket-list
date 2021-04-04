@@ -1,6 +1,12 @@
+<h3>My Bucket List</h3>
+
 <ul>
 <% @travel_destinations.each do |td| %>
-    <li><%= td.location %></li>
+    <li>
+        <a href="/travel_destinations/<%= td.id %>"> 
+            <%= td.location %>
+        </a>
+    </li>
 
 <% end %>
 </ul>

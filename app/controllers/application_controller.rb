@@ -13,6 +13,11 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  # get '/search' do
+  #   @travel_destination = TravelDestination.find_by(location: params["location"])
+  #   erb :results ????
+  # end
+
 
 
 
