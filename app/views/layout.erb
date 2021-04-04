@@ -22,15 +22,32 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                      <% if logged_in? %>
+
                         <li class="nav-item">
                           <a class="nav-link active" aria-current="page" href="/">Search</a>
                         </li>
+
                         <li class="nav-item">
                           <a class="nav-link" href="/travel_destinations">Travel Destinations</a>
                         </li>
+
                         <li class="nav-item">
                           <a class="nav-link" href="/travel_destinations/new" tabindex="-1" >Create New Travel Destination</a>
                         </li>
+
+                      <% else %>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/signup">Signup</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                          </li>
+                          
+                      <% end %>
+
                       </ul>
                       <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -42,6 +59,15 @@
 
 
         <%= yield %>
+
+        <% if logged_in? %>
+        <br><br>
+          <form method="POST" action="/logout">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout"
+
+          </form>
+        <% end %>
 
       <footer class="branding">
         <small>&copy; 2021 <strong>BucketList</strong></small>

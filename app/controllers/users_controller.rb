@@ -5,11 +5,13 @@ class UsersController < ApplicationController
 
     #signup route FORM
     get '/signup' do
-        erb :'/users/signup'
+        redirect_if_logged_in
+        erb :"/users/signup"
     end
 
     #signup route POST
     post '/signup' do
+        redirect_if_logged_in
         #take data create a new user
         user = User.new(params["user"])
 
