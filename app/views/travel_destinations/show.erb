@@ -8,8 +8,9 @@ Description: <%= @travel_destination.description %>
 Rating &#9733&#9733&#9733&#9733&#9733 : <%= @travel_destination.rating %>
 </p>
 
-<
+<p>
 <a href="/travel_destinations/<%= @travel_destination.id %>/edit">Edit</a><br>
+</p>
 
 <form action="/travel_destinations/<%= @travel_destination.id %>" method="POST">
     <input type="hidden" name="_method" value="delete">
