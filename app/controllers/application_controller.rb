@@ -7,20 +7,15 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, ENV['SESSION_SECRET']
+    use Rack::Flash, :sweep => true
+    
   end
 
   get "/" do
     erb :welcome
   end
 
-  # get '/search' do
-  #   @travel_destination = TravelDestination.find_by(location: params["location"])
-  #   erb :results ????
-  # end
-
-
-
-
+  
   helpers do
 
     def current_user
