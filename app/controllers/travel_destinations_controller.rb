@@ -1,6 +1,6 @@
 class TravelDestinationsController < ApplicationController
 
-    #READ all travel_destinations
+    
     get '/travel_destinations' do
         redirect_if_not_logged_in
 
@@ -9,7 +9,7 @@ class TravelDestinationsController < ApplicationController
     end
 
 
-    #CREATE new travel_destination (render form)
+   
 
     get '/travel_destinations/new' do
         redirect_if_not_logged_in
@@ -18,7 +18,7 @@ class TravelDestinationsController < ApplicationController
     end
 
 
-    #READ 1 travel_destination
+    
 
     get '/travel_destinations/:id' do
         redirect_if_not_logged_in
@@ -27,7 +27,7 @@ class TravelDestinationsController < ApplicationController
         erb :'travel_destinations/show'
     end
 
-    #CREATE new travel_destination (save in db)
+    
 
     post '/travel_destinations' do 
         redirect_if_not_logged_in
@@ -39,13 +39,14 @@ class TravelDestinationsController < ApplicationController
         if travel_destination.save
             redirect "/travel_destinations/#{travel_destination.id}"
         else
+            flash[:error] = "#{travel_destination.errors.full_messages.join(", ")}"
             redirect "/travel_destinations/new"
         end
         
     end
 
 
-    #UPDATE 1 travel_destination (render form)
+    
 
     get '/travel_destinations/:id/edit' do
         redirect_if_not_logged_in
@@ -55,7 +56,7 @@ class TravelDestinationsController < ApplicationController
     end
 
 
-    #UPDATE 1 travel_destination (save in db)
+    
 
     patch '/travel_destinations/:id' do
         redirect_if_not_logged_in
@@ -69,7 +70,6 @@ class TravelDestinationsController < ApplicationController
     end
 
 
-    #DELETE 1 travel_destination
 
     delete '/travel_destinations/:id' do
         redirect_if_not_logged_in
@@ -80,8 +80,10 @@ class TravelDestinationsController < ApplicationController
         redirect "/travel_destinations"
     end
 
+
     private 
 
+    
     def redirect_if_not_authorized
         @travel_destination = TravelDestination.find_by_id(params[:id])
   
