@@ -11,6 +11,9 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem "sqlite3"
+gem "dotenv", "~> 2.7"
+gem "rack-flash3", "~> 1.0"
+
 
 group :test do
   gem 'rspec'
@@ -26,4 +29,6 @@ end
 
 
 
-gem "dotenv", "~> 2.7"
+
+
+
