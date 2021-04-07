@@ -27,10 +27,6 @@
                       <% if logged_in? %>
 
                         <li class="nav-item">
-                          <a class="nav-link active fs-3" aria-current="page" href="/">Search</a>
-                        </li>
-
-                        <li class="nav-item">
                           <a class="nav-link active fs-3" href="/travel_destinations">Travel Destinations</a>
                         </li>
 
@@ -40,24 +36,28 @@
 
                       <% else %>
                           <li class="nav-item">
-                            <a class="nav-link active fs-3" href="/signup">Signup</a>
+                            <a class="nav-link active fs-3" href="/signup">Sign Up</a>
                           </li>
 
                           <li class="nav-item">
-                            <a class="nav-link active fs-3" href="/login">Login</a>
+                            <a class="nav-link active fs-3" href="/login">Log In</a>
                           </li>
 
                       <% end %>
 
                       </ul>
-                      <form class="d-flex">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form>
+ 
                       </div>
                 </div>
             </nav>
 <!-------------- END NAVBAR ------------------------->
+
+<!-------------- START FLASH ------------------------>
+  <div class="text-danger">
+    <%= flash[:error] %>
+  </div>
+<!--------------- END FLASH ------------------------->
+
 
       <div class='container-sm bg-light mt-3'>
         <div class="text-center">
@@ -67,7 +67,7 @@
               <br><br>
               <form method="POST" action="/logout">
                   <input type="hidden" name="_method" value="delete">
-                  <input type="submit" value="Logout"
+                  <input type="submit" value="Logout">
               </form>
           <% end %>
       </div>
